@@ -12,6 +12,8 @@ export const getAll = async (req, res) => {
     res.sendStatus(StatusCode.INTERNAL_SERVER_ERROR);
   }
 }
+// to create post you only need to pass post body 
+// in request body, user id will be taken from token
 
 export const create = async (req, res) => {
   const post = req.body as Partial<Post>;
