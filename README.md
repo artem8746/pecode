@@ -1,5 +1,7 @@
 # Pecode test task
 
+-   [Deploy](https://pecode-server.onrender.com/)
+
 ### Used technologies
 
 -   Express
