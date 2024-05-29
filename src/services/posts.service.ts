@@ -1,4 +1,5 @@
 import { Post, PrismaClient } from "@prisma/client";
+import { PostCreateRequest } from "../types/PostCreateRequest";
 
 const prisma = new PrismaClient();
 

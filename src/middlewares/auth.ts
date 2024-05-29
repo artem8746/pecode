@@ -9,7 +9,9 @@ export const authMiddleware = (req, res, next) => {
   }
 
   try {
-    verify(token);
+    const user = verify(token);
+
+    req.user = user;
   } catch (ex) {
     return res.sendStatus(StatusCode.UNAUTHORIZED);
   }
