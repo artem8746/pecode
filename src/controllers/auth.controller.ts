@@ -9,10 +9,6 @@ export const signUp = async (req, res) => {
   try {
     const token = await authService.signUp(signUpRequest);
 
-    res.cookie("access_token", token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-    });
     res.status(StatusCode.CREATED);
     res.send(token);
   } catch (ex) {
@@ -27,10 +23,6 @@ export const login = async (req, res) => {
   try {
     const token = await authService.login(loginRequest);
 
-    res.cookie("access_token", token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-    });
     res.status(StatusCode.OK);
     res.send(token);
   } catch (ex) {

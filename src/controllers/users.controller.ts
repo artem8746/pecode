@@ -1,10 +1,11 @@
 import { StatusCode } from "../enums/StatusCode";
+import { normalizeUser } from "../helpers/userHelper";
 import * as usersService from "../services/users.service";
 
 export const get = async (req, res) => {
   try {
     const { id: userId } = req.params;
-    const user = await usersService.get(userId);
+    const user = normalizeUser(await usersService.get(userId));
 
     res.status(StatusCode.OK);
     res.send(user);

@@ -4,4 +4,4 @@ import * as userController
 
 export const router = express.Router();
 
-router.post('/:id', userController.get);
+router.get('/:id', userController.get);
