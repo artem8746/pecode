@@ -4,4 +4,5 @@ export enum StatusCode {
   OK = 200,
   UNAUTHORIZED = 401,
   CREATED = 201,
+  INTERNAL_SERVER_ERROR = 500
 }
