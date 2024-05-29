@@ -26,7 +26,7 @@ export const login = async (loginRequest: LoginRequest) => {
     throw new Error(Errors.InvalidCredentials);
   }
 
-  const isPasswordValid = bcrypt.compare(loginRequest.password, user.password);
+  const isPasswordValid = await bcrypt.compare(loginRequest.password, user.password);
 
   if (!isPasswordValid) {
     throw new Error(Errors.InvalidCredentials);
@@ -48,9 +48,7 @@ export const signUp = async (signUpRequest: SignUpRequest) => {
     throw new Error(Errors.UserAlreadyExists);
   }
 
-  const hashedPassword = bcrypt.hash(signUpRequest.password, saltRounds, (err, hash) => {
-    return hash;
-  });
+  const hashedPassword = await bcrypt.hash(signUpRequest.password, saltRounds);
 
   const user = await prisma.user.create({
     data: {
