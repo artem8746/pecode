@@ -26,31 +26,38 @@
     nvm use 18
     ```
 
-4. Install dependencies:
+4. Setup project with the following command or use commands bellow:
+   Runs "npm install", "npm run env:init" and "npm run prisma:init"
+
+    ```bash
+    npm run setup
+    ```
+
+5. Install dependencies:
 
     ```bash
     npm install
     ```
 
-5. Init and setup if necessary .env file:
+6. Init and setup if necessary .env file:
 
     ```bash
     npm run env:init
     ```
 
-6. Make sure to run all migrations:
+7. Make sure to run all migrations:
 
     ```bash
     npm run prisma:init
     ```
 
-7. Start the development server:
+8. Start the development server:
 
     ```bash
     npm run dev
     ```
 
-8. Make requests on http://localhost:5700.
+9. Make requests on http://localhost:5700.
 
 ## Available Scripts
 
